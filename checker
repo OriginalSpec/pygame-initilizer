@@ -1,0 +1,26 @@
+import pygame
+pygame.init
+
+# Checks to see if pygame is initialized, if not, its quits the program. 
+# If pygame is initialized, it will continue and will send a message to the console.
+if pygame.init == False:
+    print("Unable to initialize pygame")
+    quit()
+else:
+    print("Successfully initialized pygame")
+
+# Creates the attributes for the screen.
+background_color = (255, 255, 255)
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Pygame Initialization (Demo)")
+screen.fill(background_color)
+pygame.display.flip()
+
+# Runs the main loop of the program.
+run = True
+
+# If user presses the X button, the program will quit.
+while run:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
